@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		BE09F14119E1205900CCA8D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09F14019E1205900CCA8D6 /* main.m */; };
 		BE09F14419E1205900CCA8D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09F14319E1205900CCA8D6 /* AppDelegate.m */; };
-		BE09F14619E1205900CCA8D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE09F14519E1205900CCA8D6 /* Images.xcassets */; };
 		BE09F14919E1205900CCA8D6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE09F14719E1205900CCA8D6 /* MainMenu.xib */; };
 		BE09F15519E1205900CCA8D6 /* FlickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09F15419E1205900CCA8D6 /* FlickTests.m */; };
+		BE09F16019E120B300CCA8D6 /* switch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BE09F15E19E120B300CCA8D6 /* switch_off.png */; };
+		BE09F16119E120B300CCA8D6 /* switch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = BE09F15F19E120B300CCA8D6 /* switch_on.png */; };
+		BEAF13E819E2D73F008A540A /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAF13E719E2D73F008A540A /* AppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +32,14 @@
 		BE09F14019E1205900CCA8D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE09F14219E1205900CCA8D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE09F14319E1205900CCA8D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE09F14519E1205900CCA8D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE09F14819E1205900CCA8D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BE09F14E19E1205900CCA8D6 /* FlickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE09F15319E1205900CCA8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE09F15419E1205900CCA8D6 /* FlickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickTests.m; sourceTree = "<group>"; };
+		BE09F15E19E120B300CCA8D6 /* switch_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_off.png; sourceTree = "<group>"; };
+		BE09F15F19E120B300CCA8D6 /* switch_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_on.png; sourceTree = "<group>"; };
+		BE09F16219E129AF00CCA8D6 /* toggleScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = toggleScript.sh; sourceTree = "<group>"; };
+		BEAF13E719E2D73F008A540A /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,8 @@
 		BE09F13219E1205900CCA8D6 = {
 			isa = PBXGroup;
 			children = (
+				BE09F16219E129AF00CCA8D6 /* toggleScript.sh */,
+				BEAF13E719E2D73F008A540A /* AppIcon.png */,
 				BE09F13D19E1205900CCA8D6 /* Flick */,
 				BE09F15119E1205900CCA8D6 /* FlickTests */,
 				BE09F13C19E1205900CCA8D6 /* Products */,
@@ -76,9 +83,10 @@
 		BE09F13D19E1205900CCA8D6 /* Flick */ = {
 			isa = PBXGroup;
 			children = (
+				BE09F15E19E120B300CCA8D6 /* switch_off.png */,
+				BE09F15F19E120B300CCA8D6 /* switch_on.png */,
 				BE09F14219E1205900CCA8D6 /* AppDelegate.h */,
 				BE09F14319E1205900CCA8D6 /* AppDelegate.m */,
-				BE09F14519E1205900CCA8D6 /* Images.xcassets */,
 				BE09F14719E1205900CCA8D6 /* MainMenu.xib */,
 				BE09F13E19E1205900CCA8D6 /* Supporting Files */,
 			);
@@ -191,8 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE09F14619E1205900CCA8D6 /* Images.xcassets in Resources */,
 				BE09F14919E1205900CCA8D6 /* MainMenu.xib in Resources */,
+				BE09F16119E120B300CCA8D6 /* switch_on.png in Resources */,
+				BEAF13E819E2D73F008A540A /* AppIcon.png in Resources */,
+				BE09F16019E120B300CCA8D6 /* switch_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +334,7 @@
 		BE09F15919E1205900CCA8D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Flick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -335,7 +345,7 @@
 		BE09F15A19E1205900CCA8D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Flick/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -398,6 +408,7 @@
 				BE09F15A19E1205900CCA8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE09F15B19E1205900CCA8D6 /* Build configuration list for PBXNativeTarget "FlickTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +417,7 @@
 				BE09F15D19E1205900CCA8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
