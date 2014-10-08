@@ -14,7 +14,6 @@
 		BE09F16019E120B300CCA8D6 /* switch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BE09F15E19E120B300CCA8D6 /* switch_off.png */; };
 		BE09F16119E120B300CCA8D6 /* switch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = BE09F15F19E120B300CCA8D6 /* switch_on.png */; };
 		BE2FC71819E51D6400A1A2D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE2FC71719E51D6400A1A2D1 /* Images.xcassets */; };
-		BEAF13E819E2D73F008A540A /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEAF13E719E2D73F008A540A /* AppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +38,7 @@
 		BE09F15419E1205900CCA8D6 /* FlickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickTests.m; sourceTree = "<group>"; };
 		BE09F15E19E120B300CCA8D6 /* switch_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_off.png; sourceTree = "<group>"; };
 		BE09F15F19E120B300CCA8D6 /* switch_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_on.png; sourceTree = "<group>"; };
-		BE09F16219E129AF00CCA8D6 /* toggleScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = toggleScript.sh; sourceTree = "<group>"; };
 		BE2FC71719E51D6400A1A2D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BEAF13E719E2D73F008A540A /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +62,6 @@
 		BE09F13219E1205900CCA8D6 = {
 			isa = PBXGroup;
 			children = (
-				BE09F16219E129AF00CCA8D6 /* toggleScript.sh */,
-				BEAF13E719E2D73F008A540A /* AppIcon.png */,
 				BE09F13D19E1205900CCA8D6 /* Flick */,
 				BE09F15119E1205900CCA8D6 /* FlickTests */,
 				BE09F13C19E1205900CCA8D6 /* Products */,
@@ -205,7 +200,6 @@
 				BE09F14919E1205900CCA8D6 /* MainMenu.xib in Resources */,
 				BE2FC71819E51D6400A1A2D1 /* Images.xcassets in Resources */,
 				BE09F16119E120B300CCA8D6 /* switch_on.png in Resources */,
-				BEAF13E819E2D73F008A540A /* AppIcon.png in Resources */,
 				BE09F16019E120B300CCA8D6 /* switch_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
