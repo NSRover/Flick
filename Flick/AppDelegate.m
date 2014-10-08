@@ -15,9 +15,6 @@
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (assign, nonatomic) BOOL darkModeOn;
 
-//@property (strong, nonatomic) NSPipe * outputPipe;
-@property (strong, nonatomic) NSTask * buildTask;
-
 @end
 
 @implementation AppDelegate
@@ -25,7 +22,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [_statusItem setToolTip:@"Flick to Dark Mode, thanks to coolguy87"];
+    [_statusItem setToolTip:@"Switch between Dark and Light mode"];
  
     [_statusItem setAction:@selector(toggled:)];
     [_statusItem setDoubleAction:@selector(quitApp:)];
@@ -35,18 +32,13 @@
 }
 
 - (void)updateDarkMode {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString * value = [userDefaults objectForKey:@"AppleInterfaceStyle"];
+    NSString * value = (__bridge NSString *)(CFPreferencesCopyValue((CFStringRef)@"AppleInterfaceStyle", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost));
     if ([value isEqualToString:@"Dark"]) {
         self.darkModeOn = YES;
     }
     else {
         self.darkModeOn = NO;
     }
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
 }
 
 - (void)setImage{
@@ -64,14 +56,18 @@
     _darkModeOn = !_darkModeOn;
     [self setImage];
     
-    NSString * modeString = @"Light";
+    //Change pref
     if (_darkModeOn) {
-        modeString = @"Dark";
         CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", @"Dark", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
     }
     else {
         CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", NULL, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
-    }    
+    }
+    
+    //update listeners
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), (CFStringRef)@"AppleInterfaceThemeChangedNotification", NULL, NULL, YES);
+    });
 }
 
 - (void)quitApp:(id)sender {
