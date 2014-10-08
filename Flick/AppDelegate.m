@@ -22,13 +22,21 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [_statusItem setToolTip:@"Switch between Dark and Light mode"];
+    [_statusItem setToolTip:@"Control-click to quit"];
  
     [_statusItem setAction:@selector(toggled:)];
-    [_statusItem setDoubleAction:@selector(quitApp:)];
     _statusItem.highlightMode = NO;
     
     [self updateDarkMode];
+    [self setImage];
+}
+
+- (void)addSystemBarItem {
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [_statusItem setToolTip:@"Control-click to quit"];
+    
+    [_statusItem setAction:@selector(toggled:)];
+    _statusItem.highlightMode = NO;
     [self setImage];
 }
 
@@ -44,17 +52,24 @@
 
 - (void)setImage{
     
-    NSString * imageName = @"switch_off.png";
+    NSString * imageName = @"switch_on.png";
 
     //Something is going wrong here
     if (_darkModeOn == YES) {
         imageName = @"switch_on.png";
     }
-    
+
     _statusItem.image = [NSImage imageNamed:imageName];
 }
 
 - (void)toggled:(id)sender {
+    
+    NSEvent *event = [NSApp currentEvent];
+    if([event modifierFlags] & NSControlKeyMask) {
+        [self quitApp:nil];
+        return;
+    }
+    
     _darkModeOn = !_darkModeOn;
     [self setImage];
     
@@ -73,11 +88,9 @@
 }
 
 - (void)quitApp:(id)sender {
-    [self toggled:nil];
-    
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     [notification setTitle: @"Flick quitting"];
-    [notification setSubtitle: @"Double clicking quits Flick"];
+    [notification setSubtitle: @"Control-click quits Flick"];
     [notification setDeliveryDate:nil];
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification: notification];
     [NSApp terminate:self];
