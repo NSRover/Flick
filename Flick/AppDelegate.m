@@ -26,6 +26,7 @@
  
     [_statusItem setAction:@selector(toggled:)];
     [_statusItem setDoubleAction:@selector(quitApp:)];
+    _statusItem.highlightMode = NO;
     
     [self updateDarkMode];
     [self setImage];
@@ -44,7 +45,8 @@
 - (void)setImage{
     
     NSString * imageName = @"switch_off.png";
-    
+
+    //Something is going wrong here
     if (_darkModeOn == YES) {
         imageName = @"switch_on.png";
     }
