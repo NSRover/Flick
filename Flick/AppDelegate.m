@@ -41,7 +41,7 @@
 }
 
 - (void)updateDarkMode {
-    NSString * value = (__bridge NSString *)(CFPreferencesCopyValue((CFStringRef)@"AppleInterfaceStyle", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost));
+    NSString *value = (__bridge NSString *)(CFPreferencesCopyValue((CFStringRef)@"AppleInterfaceStyle", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost));
     if ([value isEqualToString:@"Dark"]) {
         self.darkModeOn = YES;
     }
@@ -52,14 +52,11 @@
 
 - (void)setImage{
     
-    NSString * imageName = @"switch_on.png";
-
-    //Something is going wrong here
-    if (_darkModeOn == YES) {
-        imageName = @"switch_on.png";
-    }
-
-    _statusItem.image = [NSImage imageNamed:imageName];
+    NSString *imageName = @"switch_on.png";
+    
+    NSImage *img = [NSImage imageNamed:imageName];
+    [img setTemplate:YES];
+    [_statusItem setImage:img];
 }
 
 - (void)toggled:(id)sender {
